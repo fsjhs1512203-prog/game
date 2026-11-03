@@ -1,90 +1,1470 @@
-⛩️ 象棋勇者傳奇 (Xiangqi RPG)
-<p align="center">
-  <img src="https://img.shields.io/badge/Architecture-Single--File_HTML5-orange?style=for-the-badge&logo=html5" alt="HTML5" />
-  <img src="https://img.shields.io/badge/Styling-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Language-Vanilla_JavaScript-F7DF1E?style=for-the-badge&logo=javascript" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/Audio-Web_Audio_API-red?style=for-the-badge" alt="Web Audio API" />
-  <img src="https://img.shields.io/badge/Music-Suno_AI_Prompts-purple?style=for-the-badge" alt="Suno AI" />
-</p>
-> **「從少俠到宗師，一步一局，踏入古典象棋的武俠世界！」**
-> 
-> 《象棋勇者傳奇》是一款將 **中國象棋殘局殺法** 與 **國風 RPG 角色養成** 深度結合的一頁式學習平台與棋局應用。玩家可以在典雅的紅木棋盤上挑戰經典殘局，閱讀視覺化圖解心法，累積經驗值升級，並運用 5 階 AI 實戰磨練棋藝。
----
-📖 目錄 (Table of Contents)
-💡 開發緣由與動機
-🎮 遊戲介紹
-🌟 專案核心特色
-📜 核心戰術圖解心法
-🗺️ 開發歷程與演進
-🛠️ 使用技術棧
-🚀 快速開始與執行
----
-💡 開發緣由與動機
-🎯 開發緣由
-傳統的象棋學習往往需要閱讀密密麻麻的棋譜與文字紀錄（如「炮二平五」、「馬二進三」），對於初學者與年輕世代而言進入門檻較高，且容易感到枯燥乏味。古籍殘局（如《適情雅趣》、《橘中秘》）蘊含極高智慧，卻常因排版古奧而難以推廣。
-🚀 開發動機
-圖形化與直覺化：將抽象複雜的象棋殺法拆解為直觀的「3 步驟圖解流程圖」，搭配豐富圖示（Icon），降低學習門檻。
-RPG 遊戲化體驗 (Gamification)：結合等級（EXP）、稱號提升、金幣獎勵與 11 大成就勳章，激發學習者的探索慾與成就感。
-無縫流暢體驗：堅持採用「零依賴 Single-File」架構，無須安裝額外伺服器或安裝包，打開流覽器即可即時試煉對弈。
----
-🎮 遊戲介紹
-《象棋勇者傳奇》包含以下三大模組：
-⛩️ 殘局關卡試煉 (Campaign Mode)
-收錄 3 大章節共 10 關精心設計的古譜與經典殘局。
-提供實時「妙著提示」、「戰術解析」與「局勢圖解拆解」。
-⚔️ 實戰對弈平台 (Practice AI Mode)
-支援 5 階梯隊 AI 棋力（從入門試煉侍衛到兩步瞻前之象棋宗師）。
-採用極小化極大（Minimax 2-Ply）演算法與中宮/過河兵位置估值矩陣。
-🎵 Suno AI 國風音樂與 Web Audio 原生音效
-內建 3 組專為學習設計的 Suno AI 國風音樂 Prompt（純音樂/古箏/竹笛/古琴）。
-整合 Web Audio API，無需外部音檔即可播放宮商角徵羽古典五音。
----
-🌟 專案核心特色
-🪵 古典紅木視覺設計：客製化雙向木紋質感、金漆邊框、紅黑硃砂印章質感棋子與復古古典字型。
-📜 三步驟戰術流程圖：鐵門栓、臥槽馬、馬後砲、重砲、雙車錯、悶宮、大膽穿心等經典殺法一目瞭然。
-🥋 RPG 養成與成就系統：通關獲取經驗值與金幣，提升等級解鎖「棋壇新秀」、「象棋少俠」等稱號與成就。
-🤖 5 階 Minimax 智慧 AI：高階 AI 具備誘敵、防禦絕殺與預判玩家反擊之兩步瞻前能力。
-📦 極簡 Single-File 架構：原生 JavaScript + Tailwind CSS + SVG 向量繪製，極速載入與高相容性。
----
-📜 核心戰術圖解心法
-殺法名稱	主力棋子	攻擊目標	視覺化核心流程
-🚪 鐵門栓	🔴 俥 + ♟ 中兵/帥	🎯 敵方宮心門軸縱線	🛡️ 帥/兵鎖中路 ➔ 🔴 強俥貫底 ➔ 🉐 絕殺成立
-🐎 臥槽馬	🐎 傌 + 🔴 俥/帥	🎯 九宮象角位	🐎 跳馬至象角 ➔ 🔒 控制逃向 ➔ 🉐 車配合下底
-💣 馬後砲	💣 砲 + 🐎 傌架	🎯 九宮將帥正面	🐎 馬立於要位 ➔ 💣 砲借馬架發射 ➔ 🉐 絕殺破宮
-⚡ 雙車錯	🔴 雙俥配合	🎯 底線與次底線	🚗 一車控次底線 ➔ 🏎️ 二車交錯照將 ➔ 🉐 連環絕殺
----
-🗺️ 開發歷程與演進
-```
-[ Phase 1 ] ───► [ Phase 2 ] ───► [ Phase 3 ] ───► [ Phase 4 ]
-棋盤引擎奠基        圖解心法與 RPG        Suno AI 音樂工程      一頁式展示平台
-• SVG 棋盤渲染       • 3 步驟圖解流程圖     • 三大國風 Style Prompt • 5 階 Minimax AI
-• 走法驗證邏輯       • EXP/金幣/成就系統    • Web Audio 五音合成器  • 全功能響應式整合
-```
-階段一：邏輯奠基與殘局引擎建立
-建立中國象棋棋盤座標系統（Row 0~9, Col 0~8）與全棋子合法走法規則（包含塞馬腿、塞象眼、過河兵橫移、對帥飛將等限制）。
-階段二：古典戰術圖解與 RPG 機制導入
-設計「圖解戰術心法」與關卡試煉結構，加入玩家等級（EXP）、金幣獎勵與 11 種成就系統。
-階段三：Suno AI 聽覺氛圍與 Prompt 工程
-設計適合專注思考的 Suno AI 國風提示詞（靜心棋道、墨香墨韻、柔和暖意），並加入一鍵複製與 Web Audio 聲音合成。
-階段四：棋力演化與一頁式展示大成
-升級 AI 為 5 階梯隊與 Minimax 演算法，重構關卡驗證邏輯，並整合為流暢的一頁式展演平台。
----
-🛠️ 使用技術棧
-Front-End: HTML5, Vanilla JavaScript (ES6+)
-Styling: Tailwind CSS (via CDN), CSS3 Dynamic Wood Grain Gradients
-Graphics: SVG (Scalable Vector Graphics) for Board Grid rendering
-Audio: Web Audio API (Native Oscillator Synthesizer)
-AI Integration: Suno AI Custom Instrumental Prompts & Minimax 2-Ply Board Evaluation
----
-🚀 快速開始與執行
-本專案採用單檔自包含（Self-contained）設計，無須任何 npm 安裝或編譯步驟：
-複製專案庫 (Clone Repository)
-```bash
-   git clone https://github.com/your-username/xiangqi-rpg.git
-   ```
-開啟遊戲
-直接用任何現代瀏覽器（Chrome, Edge, Firefox, Safari）雙擊開啟 `index.html` 即可立即體驗！
----
-<p align="center">
-  <i>弈棋如弈人生，願每位少俠皆能在弈戰中領悟棋道之美！</i>
-</p>
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth h-full bg-stone-950 text-amber-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>象棋勇者傳奇 - 專案歷程與全功能遊戲平台展演</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: #1a0f0a;
+            /* 古典紅木/胡桃木雙向木紋質感繪製 */
+            background-image: 
+                radial-gradient(ellipse at top center, rgba(146, 64, 14, 0.25) 0%, rgba(15, 7, 3, 0.85) 85%),
+                repeating-linear-gradient(90deg, rgba(92, 53, 16, 0.08) 0px, rgba(92, 53, 16, 0.08) 2px, transparent 2px, transparent 12px),
+                repeating-linear-gradient(0deg, rgba(20, 10, 4, 0.25) 0px, rgba(20, 10, 4, 0.25) 1px, transparent 1px, transparent 4px);
+            background-attachment: fixed;
+        }
+
+        /* 棋盤古風視覺 */
+        .xiangqi-board-container {
+            background: linear-gradient(135deg, #2e1c0c 0%, #4a2e16 50%, #2e1c0c 100%);
+            border: 8px solid #1c0d02;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.6);
+        }
+
+        .xiangqi-board-surface {
+            background: #d7a868;
+            background-image: 
+                radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.1) 100%),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(92, 53, 16, 0.05) 2px, rgba(92, 53, 16, 0.05) 4px);
+            border: 3px solid #5c3510;
+            box-shadow: inset 0 0 15px rgba(92, 53, 16, 0.4);
+        }
+
+        .piece {
+            transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .piece-red {
+            background: radial-gradient(circle at 35% 35%, #fff1f2 0%, #fecdd3 25%, #e11d48 75%, #881337 100%);
+            color: #4c0519;
+            border: 2px solid #9f1239;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.9);
+            text-shadow: 0 1px 1px rgba(255,255,255,0.6);
+        }
+
+        .piece-black {
+            background: radial-gradient(circle at 35% 35%, #f8fafc 0%, #cbd5e1 25%, #334155 75%, #020617 100%);
+            color: #f8fafc;
+            border: 2px solid #0f172a;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.4);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .valid-move-marker {
+            width: 14px;
+            height: 14px;
+            background: radial-gradient(circle, #10b981 0%, #047857 100%);
+            border: 2px solid #ecfdf5;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #10b981;
+            animation: pulse-glow 1.2s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(0.85); opacity: 0.7; }
+            100% { transform: scale(1.15); opacity: 1; }
+        }
+
+        .scrollbar-classic::-webkit-scrollbar {
+            width: 6px;
+        }
+        .scrollbar-classic::-webkit-scrollbar-track {
+            background: #1c1917;
+        }
+        .scrollbar-classic::-webkit-scrollbar-thumb {
+            background: #78350f;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-stone-950 text-amber-100 flex flex-col min-h-screen">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="bg-stone-950/90 border-b border-amber-900/60 sticky top-0 z-50 backdrop-blur shadow-2xl px-4 py-3">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-800 via-amber-700 to-yellow-600 flex items-center justify-center font-black text-2xl text-amber-100 border-2 border-amber-400/60 shadow-lg">
+                    帥
+                </div>
+                <div>
+                    <h1 class="text-lg font-black tracking-widest text-amber-300">象棋勇者傳奇</h1>
+                    <p class="text-[10px] text-stone-400">專案開發歷程與遊戲展示 Hub</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex space-x-6 text-xs font-bold text-stone-300">
+                <a href="#journey" class="hover:text-amber-400 transition flex items-center gap-1"><span>🗺️</span> 開發歷程</a>
+                <a href="#game-hub" class="hover:text-amber-400 transition flex items-center gap-1"><span>🎮</span> 遊戲實體</a>
+                <a href="#suno-music" class="hover:text-amber-400 transition flex items-center gap-1"><span>🎵</span> Suno AI 音樂</a>
+                <a href="#tactics-codex" class="hover:text-amber-400 transition flex items-center gap-1"><span>📜</span> 戰術圖解</a>
+                <a href="#tech-stack" class="hover:text-amber-400 transition flex items-center gap-1"><span>⚡</span> 技術架構</a>
+            </nav>
+
+            <a href="#game-hub" class="px-4 py-2 bg-gradient-to-r from-amber-600 to-yellow-500 text-stone-950 font-black text-xs rounded-xl shadow-md hover:brightness-110 transition">
+                🚀 立即體驗遊戲
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative py-16 px-4 border-b border-amber-900/40 bg-gradient-to-b from-stone-950/80 via-stone-900/40 to-transparent overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-amber-950 text-amber-300 text-xs font-bold border border-amber-700/50 mb-4">
+                📜 一頁式專案作品全覽 (One-Page Showcase)
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-600 mb-4 leading-tight">
+                象棋勇者傳奇：從概念發想到國風 RPG 殘局試煉平台
+            </h1>
+            <p class="text-sm sm:text-base text-stone-300 max-w-3xl mx-auto leading-relaxed mb-8">
+                這是一份融合**古典象棋殺法殘局**、**視覺化流程圖解**、**RPG 玩家養成**與 **Suno AI 國風配樂設計**的完整作品展示。在此頁面中，您可以全覽開發脈絡，並直接操作即時可玩的殘局與 AI 對弈平台！
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#game-hub" class="px-6 py-3 bg-gradient-to-r from-red-800 via-amber-700 to-yellow-600 text-amber-100 font-bold rounded-xl shadow-xl hover:scale-105 transition border border-amber-400/50 flex items-center gap-2">
+                    <span>⚔️</span> 開始殘局試煉
+                </a>
+                <button onclick="playAmbientSound()" class="px-6 py-3 bg-stone-900 text-amber-300 font-bold rounded-xl shadow-xl hover:bg-stone-800 transition border border-amber-700/50 flex items-center gap-2">
+                    <span>🎶</span> 播放國風雅音 (Web Audio)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: 專案開發歷程 TIMELINE -->
+    <section id="journey" class="py-16 px-4 max-w-6xl mx-auto border-b border-amber-900/30">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl sm:text-3xl font-black text-amber-300 flex items-center justify-center gap-2">
+                <span>🗺️</span> 專案演進與開發歷程
+            </h2>
+            <p class="text-xs sm:text-sm text-stone-400 mt-2">從小工具構想步步構建為全功能的古典國風網頁應用</p>
+        </div>
+
+        <div class="relative border-l-2 border-amber-800/60 ml-4 sm:ml-32 space-y-10">
+            
+            <!-- Phase 1 -->
+            <div class="relative pl-6 sm:pl-8">
+                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-amber-900 border-2 border-amber-500 flex items-center justify-center text-xs font-black text-amber-200">
+                    1
+                </div>
+                <div class="bg-stone-900/90 p-5 rounded-2xl border border-amber-900/50 shadow-xl">
+                    <span class="text-xs text-amber-400 font-mono font-bold">階段一：邏輯奠基與殘局引擎建立</span>
+                    <h3 class="text-lg font-bold text-amber-200 mt-1 mb-2">棋局規則與可視化殘局結構設計</h3>
+                    <p class="text-xs sm:text-sm text-stone-300 leading-relaxed mb-3">
+                        建立了完整的中國象棋移動合法性驗證邏輯（包含俥直穿、傌踏八方、砲借架、兵過河橫行等），設計單檔 HTML 自包含（Self-contained）架構，確保完全無須額外後端伺服器即可獨立運作。
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-[10px]">
+                        <span class="bg-stone-950 text-stone-300 px-2 py-1 rounded border border-stone-800">原生 JavaScript 引擎</span>
+                        <span class="bg-stone-950 text-stone-300 px-2 py-1 rounded border border-stone-800">SVG 棋盤線條渲染</span>
+                        <span class="bg-stone-950 text-stone-300 px-2 py-1 rounded border border-stone-800">網格坐標檢測</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="relative pl-6 sm:pl-8">
+                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-amber-900 border-2 border-amber-500 flex items-center justify-center text-xs font-black text-amber-200">
+                    2
+                </div>
+                <div class="bg-stone-900/90 p-5 rounded-2xl border border-amber-900/50 shadow-xl">
+                    <span class="text-xs text-amber-400 font-mono font-bold">階段二：古典戰術圖解與 RPG 機制導入</span>
+                    <h3 class="text-lg font-bold text-amber-200 mt-1 mb-2">圖解戰術心法與勇者養成體系</h3>
+                    <p class="text-xs sm:text-sm text-stone-300 leading-relaxed mb-3">
+                        為了解決古典象棋殘局難以學習的痛點，特別研發了「戰術流程圖解 (Visual Tactical Analysis)」系統，將鐵門栓、臥槽馬、雙車錯等 6 大殺法拆解為步驟圖示，並結合等級（EXP）、金幣與 11 大成就系統。
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-[10px]">
+                        <span class="bg-stone-950 text-stone-300 px-2 py-1 rounded border border-stone-800">RPG 成長數據</span>
+                        <span class="bg-stone-950 text-stone-300 px-2 py-1 rounded border border-stone-800">11 大勳章成就</span>
+                        <span class="bg-stone-950 text-stone-300 px-2 py-1 rounded border border-stone-800">古譜殘局庫 (適情雅趣/橘中秘)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="relative pl-6 sm:pl-8">
+                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-amber-900 border-2 border-amber-500 flex items-center justify-center text-xs font-black text-amber-200">
+                    3
+                </div>
+                <div class="bg-stone-900/90 p-5 rounded-2xl border border-amber-900/50 shadow-xl">
+                    <span class="text-xs text-amber-400 font-mono font-bold">階段三：Suno AI 聽覺氛圍與提示詞工程</span>
+                    <h3 class="text-lg font-bold text-amber-200 mt-1 mb-2">專屬國風配樂提示詞規劃 (Suno AI Music System)</h3>
+                    <p class="text-xs sm:text-sm text-stone-300 leading-relaxed mb-3">
+                        為了營造高沈浸感的古代對弈氛圍，運用 Suno AI 客製化提示詞技術，打造了三大音樂情境方案（靜心棋道、墨香墨韻、柔和暖意），以古箏、竹笛、古琴為主力樂器，讓玩家在思考殘局時能享受寧靜之美。
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-[10px]">
+                        <span class="bg-stone-950 text-stone-300 px-2 py-1 rounded border border-stone-800">Suno AI Prompt 工程</span>
+                        <span class="bg-stone-950 text-stone-300 px-2 py-1 rounded border border-stone-800">一鍵複製提示詞</span>
+                        <span class="bg-stone-950 text-stone-300 px-2 py-1 rounded border border-stone-800">Web Audio API 原生音效</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="relative pl-6 sm:pl-8">
+                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-gradient-to-tr from-amber-600 to-yellow-400 border-2 border-yellow-200 flex items-center justify-center text-xs font-black text-stone-950">
+                    4
+                </div>
+                <div class="bg-gradient-to-br from-amber-950/80 to-stone-900 p-5 rounded-2xl border border-amber-500/80 shadow-2xl">
+                    <span class="text-xs text-yellow-400 font-mono font-bold">階段四：一頁式展示與即時試練平台大成</span>
+                    <h3 class="text-lg font-bold text-amber-200 mt-1 mb-2">整合完整遊戲平台與專案成果發表</h3>
+                    <p class="text-xs sm:text-sm text-stone-200 leading-relaxed mb-3">
+                        將所有階段成果、音樂資源與遊戲本體整合於單一頁面中，帶來無縫的瀏覽與試玩體驗！
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2: LIVE PLAYABLE GAME PLATFORM HUB -->
+    <section id="game-hub" class="py-12 px-2 sm:px-4 max-w-7xl mx-auto border-b border-amber-900/30">
+        <div class="text-center mb-6">
+            <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950 px-3 py-1 rounded-full border border-amber-800/60">
+                🎮 即時可玩實體遊戲平台 (Live Game Container)
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-black text-amber-300 mt-2">象棋勇者傳奇 - 關卡試煉與對弈</h2>
+            <p class="text-xs sm:text-sm text-stone-400 mt-1">可以直接在下方進行殘局解題、觀看圖解心法與對戰 AI 對手！</p>
+        </div>
+
+        <!-- EMBEDDED FULL GAME UI CONTAINER -->
+        <div class="bg-stone-900 border-2 border-amber-800/80 rounded-2xl p-3 sm:p-5 shadow-2xl">
+            
+            <!-- Game Top Nav Bar -->
+            <div class="flex flex-wrap justify-between items-center bg-stone-950 p-3 rounded-xl border border-amber-900/50 mb-4 gap-3">
+                <!-- Player Stats -->
+                <div class="flex items-center space-x-3">
+                    <div class="text-2xl">🥋</div>
+                    <div>
+                        <div class="text-xs text-amber-400 font-bold" id="user-title">📜 棋壇新秀</div>
+                        <div class="text-xs font-bold text-stone-200" id="user-level">Lv.1 象棋少俠</div>
+                    </div>
+                    <div class="w-20 sm:w-28 pl-2">
+                        <div class="flex justify-between text-[9px] text-stone-400">
+                            <span>領悟度</span>
+                            <span id="exp-text">0/100</span>
+                        </div>
+                        <div class="w-full bg-stone-800 h-1.5 rounded-full overflow-hidden border border-stone-700">
+                            <div id="exp-bar-inner" class="bg-gradient-to-r from-amber-600 to-yellow-400 h-full w-0 transition-all duration-300"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <div class="flex items-center space-x-1 text-yellow-400 font-bold text-xs bg-stone-900 px-3 py-1.5 rounded-lg border border-amber-800/40">
+                        <span>🪙</span>
+                        <span id="user-coins">150</span>
+                    </div>
+
+                    <!-- Mode Switchers -->
+                    <div class="flex space-x-1">
+                        <button onclick="switchGameTab('campaign')" id="gtab-campaign" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-700 text-stone-950">
+                            ⛩️ 關卡
+                        </button>
+                        <button onclick="switchGameTab('practice')" id="gtab-practice" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-stone-800 text-stone-300 hover:text-white">
+                            ⚔️ AI實戰
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Main Area -->
+            <div id="game-tab-campaign" class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                
+                <!-- Stage Selector List -->
+                <div class="lg:col-span-4 bg-stone-950 p-3.5 rounded-xl border border-amber-900/40 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xs font-bold text-amber-300 flex items-center gap-1">
+                                <span>🗺️</span> 殘局與殺法試煉
+                            </h3>
+                            <span id="completed-count-badge" class="text-[10px] bg-amber-950 text-amber-400 px-2 py-0.5 rounded border border-amber-700/50">
+                                0 / 10 完成
+                            </span>
+                        </div>
+
+                        <!-- Chapters -->
+                        <div class="grid grid-cols-3 gap-1 mb-3" id="chapter-filter">
+                            <button onclick="filterChapter(1)" id="chap-btn-1" class="py-1 text-[10px] font-bold rounded border border-amber-600 bg-amber-950 text-amber-200">
+                                卷一:基石
+                            </button>
+                            <button onclick="filterChapter(2)" id="chap-btn-2" class="py-1 text-[10px] font-bold rounded border border-stone-800 bg-stone-900 text-stone-400">
+                                卷二:中盤
+                            </button>
+                            <button onclick="filterChapter(3)" id="chap-btn-3" class="py-1 text-[10px] font-bold rounded border border-stone-800 bg-stone-900 text-stone-400">
+                                卷三:古譜
+                            </button>
+                        </div>
+
+                        <div class="space-y-1.5 overflow-y-auto max-h-[380px] scrollbar-classic pr-1" id="levels-container">
+                        </div>
+                    </div>
+                    
+                    <div class="pt-2 border-t border-stone-800 text-[10px] text-stone-400 flex justify-between">
+                        <span>💡 點擊選取關卡破局</span>
+                        <span class="text-amber-400 font-bold">試煉獎勵 +EXP/金幣</span>
+                    </div>
+                </div>
+
+                <!-- Board & Analysis Display -->
+                <div class="lg:col-span-8 flex flex-col items-center justify-between bg-stone-950 p-3.5 rounded-xl border border-amber-900/40">
+                    
+                    <div class="w-full flex items-center justify-between bg-stone-900/80 p-2.5 rounded-lg border border-amber-900/30 mb-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-lg" id="level-icon-badge">⚔️</span>
+                            <div>
+                                <h4 id="current-level-title" class="font-bold text-xs text-amber-300">關卡 1-1：鐵門栓絕殺</h4>
+                                <p id="level-subtitle" class="text-[10px] text-stone-400">目標：利用車鎮中路發動一招絕殺！</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-1.5">
+                            <button onclick="resetCurrentLevel()" class="px-2.5 py-1 bg-stone-800 text-[11px] text-stone-200 rounded hover:bg-stone-700">
+                                🔄 重置
+                            </button>
+                            <button onclick="showHint()" class="px-2.5 py-1 bg-amber-900/50 text-[11px] text-amber-300 rounded border border-amber-600/40 hover:bg-amber-800">
+                                💡 提示
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Xiangqi Board Canvas Render -->
+                    <div class="relative w-full max-w-[360px] aspect-[9/10] flex items-center justify-center p-1.5 xiangqi-board-container my-1">
+                        <div id="board" class="xiangqi-board-surface w-full h-full grid grid-cols-9 grid-rows-10 relative overflow-hidden rounded">
+                        </div>
+                    </div>
+
+                    <!-- Tactical Analysis Panel -->
+                    <div class="w-full mt-2 bg-stone-900/90 rounded-lg p-2.5 border border-amber-900/40 text-xs">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-amber-400 font-bold text-[11px] flex items-center gap-1">
+                                <span>🗺️</span> 戰術圖解與局勢拆解
+                            </span>
+                            <span class="text-[9px] text-emerald-400 font-mono">🔴 紅方回合</span>
+                        </div>
+                        <div id="visual-tactics-badges" class="flex flex-wrap gap-1 mb-1"></div>
+                        <p id="analysis-text" class="text-[11px] text-stone-300 italic border-l-2 border-amber-600 pl-2">
+                            點擊棋子進行移動，下方將即時為您分析此局著法關鍵...
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Practice Mode -->
+            <div id="game-tab-practice" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-4">
+                <div class="lg:col-span-4 bg-stone-950 p-4 rounded-xl border border-amber-900/40 space-y-4">
+                    <h3 class="font-bold text-amber-300 text-sm flex items-center gap-1">⚔️ 實戰全盤 AI 對弈</h3>
+                    <p class="text-xs text-stone-400">將闖關圖解中所學到的殺法技巧運用於整盤實戰對局！</p>
+                    <div>
+                        <label class="block text-xs font-bold text-stone-300 mb-1">🤖 AI 棋力難度 (5 階梯隊)</label>
+                        <select id="ai-difficulty" class="w-full bg-stone-900 border border-amber-900/60 rounded p-2 text-xs text-amber-200">
+                            <option value="1">Level 1：試練侍衛 (純隨機/入門)</option>
+                            <option value="2">Level 2：巡邏隊長 (吃子優先/初級)</option>
+                            <option value="3" selected>Level 3：宮廷國手 (局勢貪婪/中級)</option>
+                            <option value="4">Level 4：國師大師 (全局估值/高級)</option>
+                            <option value="5">Level 5：象棋宗師 (兩步瞻前/宗師)</option>
+                        </select>
+                    </div>
+                    <button onclick="startPracticeGame()" class="w-full py-2 bg-amber-700 text-stone-950 font-black text-xs rounded-lg hover:brightness-110">
+                        🚀 開始實戰新局
+                    </button>
+                </div>
+
+                <div class="lg:col-span-8 flex flex-col items-center bg-stone-950 p-3.5 rounded-xl border border-amber-900/40">
+                    <div class="relative w-full max-w-[360px] aspect-[9/10] flex items-center justify-center p-1.5 xiangqi-board-container my-1">
+                        <div id="practice-board" class="xiangqi-board-surface w-full h-full grid grid-cols-9 grid-rows-10 relative overflow-hidden rounded">
+                        </div>
+                    </div>
+                    <div class="w-full flex justify-between text-xs text-stone-400 mt-2 px-2">
+                        <span id="practice-turn" class="text-amber-400 font-bold">🔴 紅方回合</span>
+                        <button onclick="resetPracticeGame()" class="px-2 py-0.5 bg-stone-800 text-stone-300 rounded text-[11px]">🔄 重新擺局</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: SUNO AI 國風主題曲專區 -->
+    <section id="suno-music" class="py-16 px-4 max-w-6xl mx-auto border-b border-amber-900/30">
+        <div class="text-center mb-10">
+            <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950 px-3 py-1 rounded-full border border-amber-800/60">
+                🎵 音樂設計與 SUNO AI 提示詞
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-black text-amber-300 mt-2">象棋勇者傳奇 - 三大國風主題曲庫</h2>
+            <p class="text-xs sm:text-sm text-stone-400 mt-1">在 Suno AI 使用時請開啟「Custom Mode」與「Instrumental（純音樂）」</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Plan A -->
+            <div class="bg-stone-900/90 p-5 rounded-2xl border border-amber-900/50 flex flex-col justify-between shadow-xl hover:border-amber-600 transition">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-2xl">🧘‍♂️</span>
+                        <span class="text-[10px] bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-700/50 font-bold">方案 A</span>
+                    </div>
+                    <h3 class="font-bold text-base text-amber-200 mb-1">靜心棋道 - 古典象棋主題曲</h3>
+                    <p class="text-xs text-stone-400 mb-4">適合專注思考殘局與解題，古箏與竹笛為主調，旋律清雅平穩。</p>
+                    
+                    <div class="bg-stone-950 p-3 rounded-xl border border-stone-800 text-[11px] font-mono text-amber-300/90 mb-4 break-words">
+                        instrumental, traditional chinese music, soft guzheng, peaceful bamboo flute, gentle erhu, ambient, meditative, oriental calming background, cinematic, 80 bpm
+                    </div>
+                </div>
+
+                <button onclick="copyPrompt('instrumental, traditional chinese music, soft guzheng, peaceful bamboo flute, gentle erhu, ambient, meditative, oriental calming background, cinematic, 80 bpm')" class="w-full py-2 bg-stone-800 hover:bg-stone-700 text-amber-300 font-bold text-xs rounded-xl border border-amber-700/40 transition flex items-center justify-center gap-1">
+                    <span>📋</span> 複製 Style 提示詞
+                </button>
+            </div>
+
+            <!-- Plan B -->
+            <div class="bg-stone-900/90 p-5 rounded-2xl border border-amber-900/50 flex flex-col justify-between shadow-xl hover:border-amber-600 transition">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-2xl">🖌️</span>
+                        <span class="text-[10px] bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-700/50 font-bold">方案 B</span>
+                    </div>
+                    <h3 class="font-bold text-base text-amber-200 mb-1">象棋勇者傳奇 - 墨香墨韻</h3>
+                    <p class="text-xs text-stone-400 mb-4">雅致古風 RPG 氛圍，融合古琴與琵琶輕彈，帶有濃厚武俠書香氣息。</p>
+                    
+                    <div class="bg-stone-950 p-3 rounded-xl border border-stone-800 text-[11px] font-mono text-amber-300/90 mb-4 break-words">
+                        instrumental, ancient chinese folk, guqin, pipa, soft wooden percussion, elegant, soothing, peaceful, atmospheric, historical documentary soundtrack
+                    </div>
+                </div>
+
+                <button onclick="copyPrompt('instrumental, ancient chinese folk, guqin, pipa, soft wooden percussion, elegant, soothing, peaceful, atmospheric, historical documentary soundtrack')" class="w-full py-2 bg-stone-800 hover:bg-stone-700 text-amber-300 font-bold text-xs rounded-xl border border-amber-700/40 transition flex items-center justify-center gap-1">
+                    <span>📋</span> 複製 Style 提示詞
+                </button>
+            </div>
+
+            <!-- Plan C -->
+            <div class="bg-stone-900/90 p-5 rounded-2xl border border-amber-900/50 flex flex-col justify-between shadow-xl hover:border-amber-600 transition">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-2xl">🍃</span>
+                        <span class="text-[10px] bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-700/50 font-bold">方案 C</span>
+                    </div>
+                    <h3 class="font-bold text-base text-amber-200 mb-1">妙著圖解 - 柔和國風學習曲</h3>
+                    <p class="text-xs text-stone-400 mb-4">輕快放鬆的學習背景音，節奏活潑柔和，帶有漸進的啟發思考感。</p>
+                    
+                    <div class="bg-stone-950 p-3 rounded-xl border border-stone-800 text-[11px] font-mono text-amber-300/90 mb-4 break-words">
+                        instrumental, soft traditional chinese, acoustic guzheng, light flute, gentle strings, relaxing, reflective, warm, minimalist, study background music
+                    </div>
+                </div>
+
+                <button onclick="copyPrompt('instrumental, soft traditional chinese, acoustic guzheng, light flute, gentle strings, relaxing, reflective, warm, minimalist, study background music')" class="w-full py-2 bg-stone-800 hover:bg-stone-700 text-amber-300 font-bold text-xs rounded-xl border border-amber-700/40 transition flex items-center justify-center gap-1">
+                    <span>📋</span> 複製 Style 提示詞
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: TACTICS CODEX SHOWCASE -->
+    <section id="tactics-codex" class="py-16 px-4 max-w-6xl mx-auto border-b border-amber-900/30">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl sm:text-3xl font-black text-amber-300 flex items-center justify-center gap-2">
+                <span>📜</span> 核心戰術圖解與殺法心法名冊
+            </h2>
+            <p class="text-xs sm:text-sm text-stone-400 mt-1">運用直觀圖示流程圖，拆解古典象棋中最具威力之絕殺陣法</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="tactics-cards-showcase">
+            <!-- Dynamically populated via JS -->
+        </div>
+    </section>
+
+    <!-- SECTION 5: TECH STACK & HIGHLIGHTS -->
+    <section id="tech-stack" class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl sm:text-3xl font-black text-amber-300 flex items-center justify-center gap-2">
+                <span>⚡</span> 技術架構與開發特色
+            </h2>
+            <p class="text-xs sm:text-sm text-stone-400 mt-1">現代前端技術與古典國風美學的精緻融合</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-stone-900/80 p-4 rounded-xl border border-amber-900/40">
+                <div class="text-amber-400 text-2xl mb-2">📦</div>
+                <h3 class="font-bold text-amber-200 text-sm mb-1">Single-File 零依賴</h3>
+                <p class="text-xs text-stone-400">全部邏輯、樣式與 state 封裝於單一 HTML，加載迅速，完美相容流覽器。</p>
+            </div>
+            <div class="bg-stone-900/80 p-4 rounded-xl border border-amber-900/40">
+                <div class="text-amber-400 text-2xl mb-2">🎨</div>
+                <h3 class="font-bold text-amber-200 text-sm mb-1">Tailwind 古典視覺</h3>
+                <p class="text-xs text-stone-400">客製化木紋質感棋盤、古風印章風格棋子與流暢漸變陰影設計。</p>
+            </div>
+            <div class="bg-stone-900/80 p-4 rounded-xl border border-amber-900/40">
+                <div class="text-amber-400 text-2xl mb-2">🤖</div>
+                <h3 class="font-bold text-amber-200 text-sm mb-1">原生 AI 對弈引擎</h3>
+                <p class="text-xs text-stone-400">內建輕量化 minimax 模擬邏輯，支援先後手選擇與多難度切換。</p>
+            </div>
+            <div class="bg-stone-900/80 p-4 rounded-xl border border-amber-900/40">
+                <div class="text-amber-400 text-2xl mb-2">🎵</div>
+                <h3 class="font-bold text-amber-200 text-sm mb-1">Web Audio API 國風音效</h3>
+                <p class="text-xs text-stone-400">使用網頁音訊合成技術，無須外部音效檔即可即時演奏高雅五音。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-stone-950 border-t border-amber-900/60 py-8 px-4 text-center text-xs text-stone-500 mt-auto">
+        <div class="max-w-5xl mx-auto space-y-2">
+            <p class="text-amber-400/80 font-bold">象棋勇者傳奇 - 專案開發歷程與遊戲展演平台</p>
+            <p>Visual Xiangqi Tactical Masterclass & Suno AI Music Showcase</p>
+            <p class="text-[10px] text-stone-600">© 2026 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Stage Victory Modal -->
+    <div id="victory-modal" class="fixed inset-0 bg-stone-950/85 backdrop-blur-md z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-stone-900 border-2 border-amber-500/80 rounded-2xl max-w-md w-full p-6 text-center shadow-2xl relative">
+            <div class="w-14 h-14 bg-gradient-to-tr from-amber-600 to-yellow-400 text-stone-950 rounded-full flex items-center justify-center text-2xl mx-auto mb-3 font-black shadow-lg">
+                🉐
+            </div>
+            <h3 class="text-2xl font-black text-amber-300 mb-1">闖關大捷！</h3>
+            <p id="victory-level-name" class="text-xs font-bold text-stone-300">成功解開關卡</p>
+            
+            <div class="my-4 p-3 bg-stone-950 rounded-xl border border-amber-900/50 text-left text-xs space-y-2">
+                <div class="text-amber-400 font-bold flex items-center gap-1">📜 戰術圖解領悟分析：</div>
+                <div id="victory-flowchart" class="flex flex-wrap gap-1 py-1"></div>
+                <p id="victory-explanation" class="text-stone-300 italic text-[11px] leading-relaxed"></p>
+                <div class="pt-2 border-t border-stone-800 flex justify-around text-amber-300 font-bold text-xs">
+                    <span>⚡ +<span id="reward-exp">50</span> EXP</span>
+                    <span>🪙 +<span id="reward-coins">30</span> 金幣</span>
+                </div>
+            </div>
+
+            <button onclick="closeVictoryModal()" class="w-full py-2.5 bg-gradient-to-r from-amber-600 to-yellow-500 text-stone-950 font-black rounded-xl hover:brightness-110 shadow-lg transition text-xs">
+                進入下一關試煉 ➔
+            </button>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-stone-800 text-amber-200 border border-amber-600/50 px-4 py-2.5 rounded-xl shadow-2xl flex items-center space-x-2 translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50 text-xs">
+        <span id="toast-icon">ℹ️</span>
+        <span id="toast-message" class="font-bold">提示訊息</span>
+    </div>
+
+    <!-- SCRIPT LOGIC -->
+    <script>
+        // Player State
+        const playerState = {
+            level: 1,
+            exp: 0,
+            maxExp: 100,
+            coins: 150,
+            title: "象棋少俠",
+            currentLevelId: 0,
+            currentChapter: 1,
+            unlockedLevels: [0],
+            completedLevels: [],
+            unlockedAchievements: []
+        };
+
+        // Complete Stage Data (100% Correct Xiangqi Rules & Solvable Formations)
+        const CAMPAIGN_LEVELS = [
+            {
+                id: 0, chapter: 1, title: "關卡 1-1：鐵門栓絕殺", difficulty: "★☆☆", icon: "🚪",
+                subtitle: "目標：利用強俥鎮住中線並進底吃士絕殺！", hint: "將紅俥進至底線（0, 3）擊殺黑士！", exp: 50, coins: 30,
+                badges: ["🚪 鐵門栓", "🔴 車鎮九宮", "🎯 直取中門"], steps: ["1. 強俥進底", "2. 擊殺黑士", "3. 鐵門栓絕殺"],
+                analysis: "鐵門栓殺法：利用帥/兵控住中路，強俥直線進底擊殺門軸士，配合邊路砲護車完成絕殺。",
+                board: [
+                    ['C', null, null, 'a', 'k', 'a', null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, 'P', null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, 'R', null, null, null, null, null],
+                    [null, null, null, null, 'K', null, null, null, null]
+                ],
+                targetMoveSequence: [{ from: [8, 3], to: [0, 3] }]
+            },
+            {
+                id: 1, chapter: 1, title: "關卡 1-2：臥槽馬速攻", difficulty: "★☆☆", icon: "🐎",
+                subtitle: "目標：跳馬至象角要位（臥槽位）封鎖逃路！", hint: "將紅馬跳至臥槽位（1, 2）！", exp: 60, coins: 35,
+                badges: ["🐎 臥槽馬", "🎯 象角控制", "⚡ 封鎖退路"], steps: ["1. 馬躍臥槽", "2. 封鎖九宮", "3. 一擊必殺"],
+                analysis: "臥槽馬殺法：將馬躍至對方象角（1,2），控制敵將逃路，配合控線橫車完成將殺。",
+                board: [
+                    [null, null, null, 'a', 'k', 'a', null, null, null],
+                    [null, 'R', null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, 'N', null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, 'K', null, null, null, null]
+                ],
+                targetMoveSequence: [{ from: [3, 3], to: [1, 2] }]
+            },
+            {
+                id: 2, chapter: 1, title: "關卡 1-3：馬後砲組合殺", difficulty: "★★☆", icon: "💣",
+                subtitle: "目標：借馬為架，後砲平移至中路照將！", hint: "將紅砲平移至中路馬後（4, 4）！", exp: 70, coins: 40,
+                badges: ["💣 馬後砲", "🐎 借馬做架", "🎯 直貫宮心"], steps: ["1. 定位馬架", "2. 砲借馬威", "3. 絕殺破宮"],
+                analysis: "馬後砲殺法：馬在前方控制九宮要道並做為砲架，砲平移至馬後直接叫將。",
+                board: [
+                    [null, null, null, 'a', 'k', 'a', null, null, null],
+                    [null, null, null, null, 'p', null, null, null, null],
+                    [null, null, null, null, 'N', null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, 'C', null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, 'K', null, null, null, null]
+                ],
+                targetMoveSequence: [{ from: [4, 1], to: [4, 4] }]
+            },
+            {
+                id: 3, chapter: 1, title: "關卡 1-4：重砲疊加攻防", difficulty: "★★☆", icon: "🔥",
+                subtitle: "目標：雙砲同線重疊，無視士象防守！", hint: "將後砲平移至中路架砲（5, 4）！", exp: 80, coins: 45,
+                badges: ["🔥 重砲疊加", "💣 前後同線", "🛡️ 貫穿士象"], steps: ["1. 雙砲同線", "2. 前砲做架", "3. 後砲絕殺"],
+                analysis: "重砲殺法：兩尊砲位於同一直線上，前砲為架，後砲叫將且受兵護衛，對方無法抵擋。",
+                board: [
+                    [null, null, null, 'a', 'k', 'a', null, null, null],
+                    [null, null, null, null, 'P', null, null, null, null],
+                    [null, null, null, null, 'C', null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, 'C', null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, 'K', null, null, null, null]
+                ],
+                targetMoveSequence: [{ from: [5, 1], to: [5, 4] }]
+            },
+            {
+                id: 4, chapter: 2, title: "關卡 2-1：雙車錯殺法", difficulty: "★★☆", icon: "⚡",
+                subtitle: "目標：雙俥交替在底線與次底線橫掃將殺！", hint: "將底車推進至底線（0, 3）！", exp: 90, coins: 50,
+                badges: ["⚡ 雙車錯", "🚗 雙車輪番", "🎯 次底線封殺"], steps: ["1. 一車控線", "2. 二車交錯", "3. 連環絕殺"],
+                analysis: "雙車錯殺法：一車控制次底線，二車交錯橫掃底線叫將，封死敵將退路。",
+                board: [
+                    [null, null, null, null, 'k', 'a', null, null, null],
+                    [null, 'R', null, null, null, 'a', null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, 'R', null, null, null, null, null],
+                    [null, null, null, null, 'K', null, null, null, null]
+                ],
+                targetMoveSequence: [{ from: [8, 3], to: [0, 3] }]
+            },
+            {
+                id: 5, chapter: 2, title: "關卡 2-2：悶宮奇襲", difficulty: "★★★", icon: "🔒",
+                subtitle: "目標：巧用敵方雙士自我塞宮，一砲悶殺！", hint: "將紅砲推進至中路（2, 4）！", exp: 100, coins: 55,
+                badges: ["🔒 悶宮殺", "🛡️ 敵士自塞", "💣 單砲沉底"], steps: ["1. 觀察自塞", "2. 單砲沉底", "3. 巧破九宮"],
+                analysis: "悶宮殺法：敵將被自身雙士卡住無法移動，紅砲借士做架直接完成悶殺。",
+                board: [
+                    [null, null, null, 'a', 'k', 'a', null, null, null],
+                    [null, null, null, null, 'a', null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, 'C', null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, 'K', null, null, null, null]
+                ],
+                targetMoveSequence: [{ from: [5, 4], to: [2, 4] }]
+            },
+            {
+                id: 6, chapter: 2, title: "關卡 2-3：大膽穿心", difficulty: "★★★", icon: "🗡️",
+                subtitle: "目標：中兵強行攻入九宮核心！", hint: "將過河兵直進破宮（1, 4）！", exp: 110, coins: 60,
+                badges: ["🗡️ 大膽穿心", "♟️ 強兵破宮", "🎯 帥兵連環"], steps: ["1. 強兵直進", "2. 帥助兵威", "3. 穿心絕殺"],
+                analysis: "大膽穿心殺法：高位兵直逼中路核心，由於老帥照面（飛將規則），敵將無法吃兵。",
+                board: [
+                    ['R', null, null, null, 'k', null, null, null, 'R'],
+                    [null, null, null, 'a', null, 'a', null, null, null],
+                    [null, null, null, null, 'P', null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, 'K', null, null, null, null]
+                ],
+                targetMoveSequence: [{ from: [2, 4], to: [1, 4] }]
+            },
+            {
+                id: 7, chapter: 3, title: "關卡 3-1：《適情雅趣》殘局", difficulty: "★★★", icon: "📜",
+                subtitle: "目標：重現明代名局殘局妙著！", hint: "將紅馬躍至臥槽位（1, 2）！", exp: 120, coins: 70,
+                badges: ["📜 適情雅趣", "🐎 臥槽妙著", "🎯 古譜名局"], steps: ["1. 馬躍臥槽", "2. 逼敵將移", "3. 奠定勝局"],
+                analysis: "選自明代《適情雅趣》古譜殘局，展示臥槽馬與車攻守轉換之精妙。",
+                board: [
+                    [null, null, null, 'a', 'k', 'a', null, null, null],
+                    [null, 'R', null, null, null, null, null, null, null],
+                    [null, null, null, null, 'r', null, null, null, null],
+                    [null, null, null, 'N', null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, 'K', null, null, null, null]
+                ],
+                targetMoveSequence: [{ from: [3, 3], to: [1, 2] }]
+            },
+            {
+                id: 8, chapter: 3, title: "關卡 3-2：《橘中秘》殘局", difficulty: "★★★", icon: "🍊",
+                subtitle: "目標：借車炮連環突破防線！", hint: "將紅車直貫底線叫將（0, 3）！", exp: 130, coins: 75,
+                badges: ["🍊 橘中秘", "🚗 強車下底", "⚡ 砲車連攻"], steps: ["1. 強車沉底", "2. 封死後路", "3. 絕殺通關"],
+                analysis: "選自清代《橘中秘》殘局精粹，運用強車沉底，配合邊砲護衛完成破防殺局。",
+                board: [
+                    ['C', null, null, null, 'k', 'a', null, null, null],
+                    [null, null, null, null, 'a', null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, 'R', null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, 'K', null, null, null, null]
+                ],
+                targetMoveSequence: [{ from: [5, 3], to: [0, 3] }]
+            },
+            {
+                id: 9, chapter: 3, title: "關卡 3-3：《蕉窗夜雨》殘局", difficulty: "★★★", icon: "👑",
+                subtitle: "目標：絕殺終極古譜殘局！", hint: "將過河兵橫移至肋道中門（1, 4）！", exp: 150, coins: 100,
+                badges: ["👑 蕉窗夜雨", "♟️ 兵控肋道", "🏆 終極試煉"], steps: ["1. 兵占肋道", "2. 控制九宮", "3. 登頂大師"],
+                analysis: "《蕉窗夜雨》古典終極殘局，橫兵控中，配合對將規則完成經典絕殺。",
+                board: [
+                    ['R', null, null, 'a', 'k', 'a', null, null, null],
+                    [null, null, null, null, null, 'P', null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, null, null, null, null, null],
+                    [null, null, null, null, 'K', null, null, null, null]
+                ],
+                targetMoveSequence: [{ from: [1, 5], to: [1, 4] }]
+            }
+        ];
+
+        // TACTICS CODEX DATA
+        const TACTICS_CODEX = [
+            {
+                title: "🚪 鐵門栓殺法", difficulty: "★☆☆", icon: "🚪", keyPiece: "🔴 俥 + ♟ 中兵/帥", target: "🎯 敵方宮心門軸縱線",
+                flow: [
+                    { icon: "🛡️", title: "第一步", text: "帥/兵鎖死中路" },
+                    { icon: "🔴", title: "第二步", text: "強俥貫底" },
+                    { icon: "🉐", title: "第三步", text: "絕殺成立" }
+                ],
+                desc: "利用強俥控制敵方九宮中門縱線，配合中兵或帥卡住中路，讓對手士象無法防衛。",
+                keyPoint: "關鍵在於強行鎖住中門，士無法阻擋貫穿底線的強俥。"
+            },
+            {
+                title: "🐎 臥槽馬殺法", difficulty: "★☆☆", icon: "🐎", keyPiece: "🐎 傌 + 🔴 俥/帥", target: "🎯 九宮象角位 (斜二)",
+                flow: [
+                    { icon: "🐎", title: "第一步", text: "跳馬至象角" },
+                    { icon: "🔒", title: "第二步", text: "控制將帥逃向" },
+                    { icon: "🉐", title: "第三步", text: "車配合下底" }
+                ],
+                desc: "將馬跳至對方象角位叫將，同時控制敵將逃躍路線，配合俥或砲完成絕殺。",
+                keyPoint: "進攻前先確認跳馬路徑無敵子絆馬腿。"
+            },
+            {
+                title: "💣 馬後砲殺法", difficulty: "★★☆", icon: "💣", keyPiece: "💣 砲 + 🐎 傌架", target: "🎯 九宮將帥正面",
+                flow: [
+                    { icon: "🐎", title: "第一步", text: "馬立於九宮要位" },
+                    { icon: "💣", title: "第二步", text: "砲借馬架發射" },
+                    { icon: "🉐", title: "第三步", text: "馬控退路砲照將" }
+                ],
+                desc: "馬在前方控制敵將要道並做為砲架，後方的砲借馬架直線叫將。",
+                keyPoint: "馬具備「控制逃跑退路」與「提供發射砲架」雙重關鍵作用。"
+            },
+            {
+                title: "⚡ 雙車錯殺法", difficulty: "★★☆", icon: "⚡", keyPiece: "🔴 雙俥配合", target: "🎯 底線與七八路橫線",
+                flow: [
+                    { icon: "🚗", title: "第一步", text: "一車控制次底線" },
+                    { icon: "🏎️", title: "第二步", text: "二車交錯照將" },
+                    { icon: "🉐", title: "第三步", text: "連環絕殺" }
+                ],
+                desc: "兩輛車交替在敵方的底線與次底線發動叫將，強行逼迫敵將移動直至絕路。",
+                keyPoint: "中盤與殘局極具殺傷力的強攻組合。"
+            }
+        ];
+
+        let currentBoardState = [];
+        let selectedCell = null;
+        let validMoves = [];
+        let isPracticeMode = false;
+        let currentTurn = 'red';
+
+        window.onload = function() {
+            renderLevelsList(1);
+            loadLevel(0);
+            renderTacticsShowcase();
+            updatePlayerStatsUI();
+        };
+
+        function switchGameTab(mode) {
+            if (mode === 'campaign') {
+                isPracticeMode = false;
+                document.getElementById('game-tab-campaign').classList.remove('hidden');
+                document.getElementById('game-tab-practice').classList.add('hidden');
+                document.getElementById('gtab-campaign').className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-700 text-stone-950";
+                document.getElementById('gtab-practice').className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-stone-800 text-stone-300 hover:text-white";
+                loadLevel(playerState.currentLevelId);
+            } else {
+                isPracticeMode = true;
+                document.getElementById('game-tab-campaign').classList.add('hidden');
+                document.getElementById('game-tab-practice').classList.remove('hidden');
+                document.getElementById('gtab-campaign').className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-stone-800 text-stone-300 hover:text-white";
+                document.getElementById('gtab-practice').className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-700 text-stone-950";
+                startPracticeGame();
+            }
+        }
+
+        function filterChapter(chapNum) {
+            playerState.currentChapter = chapNum;
+            for (let i = 1; i <= 3; i++) {
+                const btn = document.getElementById(`chap-btn-${i}`);
+                if (i === chapNum) {
+                    btn.className = "py-1 text-[10px] font-bold rounded border border-amber-600 bg-amber-950 text-amber-200";
+                } else {
+                    btn.className = "py-1 text-[10px] font-bold rounded border border-stone-800 bg-stone-900 text-stone-400";
+                }
+            }
+            renderLevelsList(chapNum);
+        }
+
+        function renderLevelsList(chapNum) {
+            const container = document.getElementById('levels-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const filtered = CAMPAIGN_LEVELS.filter(l => l.chapter === chapNum);
+
+            filtered.forEach((lvl) => {
+                const isUnlocked = playerState.unlockedLevels.includes(lvl.id);
+                const isCompleted = playerState.completedLevels.includes(lvl.id);
+
+                const card = document.createElement('div');
+                card.className = `p-2 rounded-lg border transition cursor-pointer flex items-center justify-between ${
+                    lvl.id === playerState.currentLevelId
+                        ? 'bg-amber-950/80 border-amber-500 text-amber-200 shadow'
+                        : isUnlocked
+                        ? 'bg-stone-900/80 border-stone-800 hover:border-amber-700 text-stone-300'
+                        : 'bg-stone-900/30 border-stone-900 text-stone-600 cursor-not-allowed'
+                }`;
+
+                card.onclick = () => { if (isUnlocked) loadLevel(lvl.id); };
+
+                card.innerHTML = `
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm">${isCompleted ? '✓' : lvl.icon}</span>
+                        <div>
+                            <div class="font-bold text-xs">${lvl.title}</div>
+                            <div class="text-[9px] text-stone-500">${lvl.difficulty} • +${lvl.exp} EXP</div>
+                        </div>
+                    </div>
+                    <span class="text-xs">${isUnlocked ? '➔' : '🔒'}</span>
+                `;
+                container.appendChild(card);
+            });
+
+            document.getElementById('completed-count-badge').innerText = `${playerState.completedLevels.length} / ${CAMPAIGN_LEVELS.length} 完成`;
+        }
+
+        function loadLevel(levelId) {
+            playerState.currentLevelId = levelId;
+            const lvl = CAMPAIGN_LEVELS.find(l => l.id === levelId);
+            if (!lvl) return;
+
+            document.getElementById('current-level-title').innerText = lvl.title;
+            document.getElementById('level-icon-badge').innerText = lvl.icon;
+            document.getElementById('level-subtitle').innerText = lvl.subtitle;
+            document.getElementById('analysis-text').innerText = lvl.analysis;
+
+            const badgesContainer = document.getElementById('visual-tactics-badges');
+            badgesContainer.innerHTML = '';
+            lvl.badges.forEach(b => {
+                const badge = document.createElement('span');
+                badge.className = "text-[9px] bg-amber-950 text-amber-300 px-1.5 py-0.5 rounded border border-amber-700/40 font-bold";
+                badge.innerText = b;
+                badgesContainer.appendChild(badge);
+            });
+
+            currentBoardState = JSON.parse(JSON.stringify(lvl.board));
+            currentTurn = 'red';
+            selectedCell = null; validMoves = [];
+            renderBoard('board', currentBoardState);
+            renderLevelsList(playerState.currentChapter);
+        }
+
+        function resetCurrentLevel() {
+            loadLevel(playerState.currentLevelId);
+            showToast("🔄 局勢已重置");
+        }
+
+        function showHint() {
+            const lvl = CAMPAIGN_LEVELS.find(l => l.id === playerState.currentLevelId);
+            if (lvl) showToast(`💡 提示：${lvl.hint}`);
+        }
+
+        // Helper function for SVG element creation
+        function createSVG(tag, attrs) {
+            const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+            for (let k in attrs) el.setAttribute(k, attrs[k]);
+            return el;
+        }
+
+        function createPieceElement(code) {
+            const isRed = code === code.toUpperCase();
+            const map = {
+                'K': '帥', 'A': '仕', 'B': '相', 'N': '傌', 'R': '俥', 'C': '砲', 'P': '兵',
+                'k': '將', 'a': '士', 'b': '象', 'n': '馬', 'r': '車', 'c': '砲', 'p': '卒'
+            };
+            const el = document.createElement('div');
+            el.className = `piece w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-black text-xs sm:text-sm ${
+                isRed ? 'piece-red' : 'piece-black'
+            }`;
+            el.innerText = map[code] || code;
+            return el;
+        }
+
+        function handleCellClick(r, c, boardElementId) {
+            const piece = currentBoardState[r][c];
+            const isRedTurn = currentTurn === 'red';
+
+            if (selectedCell && validMoves.some(m => m.r === r && m.c === c)) {
+                const { r: fromR, c: fromC } = selectedCell;
+                
+                currentBoardState[r][c] = currentBoardState[fromR][fromC];
+                currentBoardState[fromR][fromC] = null;
+                selectedCell = null; validMoves = [];
+
+                if (!isPracticeMode) {
+                    const lvl = CAMPAIGN_LEVELS.find(l => l.id === playerState.currentLevelId);
+                    const targetMove = lvl.targetMoveSequence[0];
+                    renderBoard(boardElementId, currentBoardState);
+
+                    if (fromR === targetMove.from[0] && fromC === targetMove.from[1] &&
+                        r === targetMove.to[0] && c === targetMove.to[1]) {
+                        setTimeout(() => triggerVictory(lvl), 250);
+                    } else {
+                        showToast("❌ 此招非最佳絕殺解，請重置後再試！");
+                    }
+                } else {
+                    currentTurn = 'black';
+                    renderBoard(boardElementId, currentBoardState);
+                    document.getElementById('practice-turn').innerText = '⚫ 黑方 (AI) 思考中...';
+                    setTimeout(() => makeAIMove(), 350);
+                }
+                return;
+            }
+
+            if (piece) {
+                const isPieceRed = piece === piece.toUpperCase();
+                if ((isRedTurn && isPieceRed) || (!isRedTurn && !isPieceRed)) {
+                    selectedCell = { r, c };
+                    validMoves = getValidMovesForPiece(r, c, currentBoardState);
+                    renderBoard(boardElementId, currentBoardState);
+                    return;
+                }
+            }
+
+            selectedCell = null; validMoves = [];
+            renderBoard(boardElementId, currentBoardState);
+        }
+
+        function triggerVictory(lvl) {
+            if (!playerState.completedLevels.includes(lvl.id)) {
+                playerState.completedLevels.push(lvl.id);
+                const nextId = lvl.id + 1;
+                if (CAMPAIGN_LEVELS.some(l => l.id === nextId) && !playerState.unlockedLevels.includes(nextId)) {
+                    playerState.unlockedLevels.push(nextId);
+                }
+            }
+
+            playerState.coins += lvl.coins;
+            addPlayerExp(lvl.exp);
+
+            document.getElementById('victory-level-name').innerText = `成功解開 ${lvl.title}`;
+            document.getElementById('victory-explanation').innerText = lvl.analysis;
+            document.getElementById('reward-exp').innerText = lvl.exp;
+            document.getElementById('reward-coins').innerText = lvl.coins;
+
+            const flowchartEl = document.getElementById('victory-flowchart');
+            flowchartEl.innerHTML = '';
+            lvl.steps.forEach(step => {
+                const stepNode = document.createElement('span');
+                stepNode.className = "text-[9px] bg-amber-950 text-amber-300 px-1.5 py-0.5 rounded border border-amber-800/60 font-bold";
+                stepNode.innerText = step;
+                flowchartEl.appendChild(stepNode);
+            });
+
+            document.getElementById('victory-modal').classList.remove('hidden');
+        }
+
+        function closeVictoryModal() {
+            document.getElementById('victory-modal').classList.add('hidden');
+            const nextId = playerState.currentLevelId + 1;
+            if (CAMPAIGN_LEVELS.some(l => l.id === nextId)) {
+                loadLevel(nextId);
+            } else {
+                showToast("🎉 恭喜通關所有試煉！");
+            }
+        }
+
+        // Simplified Board Renderer
+        function renderBoard(boardElementId, boardData) {
+            const boardEl = document.getElementById(boardElementId);
+            if (!boardEl) return;
+            boardEl.innerHTML = '';
+
+            const svg = createSVG("svg", {
+                class: "absolute inset-0 w-full h-full pointer-events-none z-0",
+                viewBox: "0 0 900 1000"
+            });
+
+            const colX = c => (c + 0.5) * 100;
+            const rowY = r => (r + 0.5) * 100;
+
+            // Horizontal & Vertical Grid lines
+            for (let r = 0; r < 10; r++) {
+                svg.appendChild(createSVG("line", { x1: colX(0), y1: rowY(r), x2: colX(8), y2: rowY(r), stroke: "#5c3510", "stroke-width": "3.5" }));
+            }
+            for (let c = 0; c < 9; c++) {
+                if (c === 0 || c === 8) {
+                    svg.appendChild(createSVG("line", { x1: colX(c), y1: rowY(0), x2: colX(c), y2: rowY(9), stroke: "#5c3510", "stroke-width": "3.5" }));
+                } else {
+                    svg.appendChild(createSVG("line", { x1: colX(c), y1: rowY(0), x2: colX(c), y2: rowY(4), stroke: "#5c3510", "stroke-width": "3" }));
+                    svg.appendChild(createSVG("line", { x1: colX(c), y1: rowY(5), x2: colX(c), y2: rowY(9), stroke: "#5c3510", "stroke-width": "3" }));
+                }
+            }
+
+            // Palace diagonals
+            const addDiag = (x1, y1, x2, y2) => svg.appendChild(createSVG("line", { x1: colX(x1), y1: rowY(y1), x2: colX(x2), y2: rowY(y2), stroke: "#5c3510", "stroke-width": "2.5" }));
+            addDiag(3, 0, 5, 2); addDiag(5, 0, 3, 2);
+            addDiag(3, 7, 5, 9); addDiag(5, 7, 3, 9);
+
+            boardEl.appendChild(svg);
+
+            const river = document.createElement('div');
+            river.className = "absolute left-0 right-0 top-[40%] h-[20%] flex items-center justify-around text-amber-950 font-black tracking-[1.2em] text-sm pointer-events-none z-0 opacity-80";
+            river.innerHTML = `<span>楚河</span><span>漢界</span>`;
+            boardEl.appendChild(river);
+
+            for (let r = 0; r < 10; r++) {
+                for (let c = 0; c < 9; c++) {
+                    const cell = document.createElement('div');
+                    cell.className = "relative flex items-center justify-center cursor-pointer z-10 w-full h-full";
+                    cell.onclick = () => handleCellClick(r, c, boardElementId);
+
+                    const pieceCode = boardData[r][c];
+                    if (pieceCode) cell.appendChild(createPieceElement(pieceCode));
+
+                    if (selectedCell?.r === r && selectedCell?.c === c) {
+                        cell.classList.add('ring-2', 'ring-amber-400', 'rounded-full');
+                    }
+
+                    if (validMoves.some(m => m.r === r && m.c === c)) {
+                        const dot = document.createElement('div');
+                        dot.className = "valid-move-marker z-20 pointer-events-none";
+                        cell.appendChild(dot);
+                    }
+
+                    boardEl.appendChild(cell);
+                }
+            }
+        }
+
+        // Streamlined Move Validator
+        const ORTHO_DIRS = [[1,0],[-1,0],[0,1],[0,-1]];
+        const DIAG_DIRS = [[1,1],[1,-1],[-1,1],[-1,-1]];
+        const HORSE_MOVES = [
+            { target: [-2, -1], leg: [-1, 0] }, { target: [-2, 1], leg: [-1, 0] },
+            { target: [2, -1], leg: [1, 0] },   { target: [2, 1], leg: [1, 0] },
+            { target: [-1, -2], leg: [0, -1] }, { target: [1, -2], leg: [0, -1] },
+            { target: [-1, 2], leg: [0, 1] },   { target: [1, 2], leg: [0, 1] }
+        ];
+
+        function getValidMovesForPiece(r, c, board) {
+            const piece = board[r][c];
+            if (!piece) return [];
+            const moves = [];
+            const type = piece.toUpperCase();
+            const isRed = piece === piece.toUpperCase();
+
+            const isEnemy = target => target && (isRed ? target === target.toLowerCase() : target === target.toUpperCase());
+            const canLand = (nr, nc) => nr >= 0 && nr < 10 && nc >= 0 && nc < 9 && (!board[nr][nc] || isEnemy(board[nr][nc]));
+
+            switch (type) {
+                case 'K':
+                case 'A': {
+                    const minR = isRed ? 7 : 0, maxR = isRed ? 9 : 2;
+                    const dirs = type === 'K' ? ORTHO_DIRS : DIAG_DIRS;
+                    dirs.forEach(([dr, dc]) => {
+                        const nr = r + dr, nc = c + dc;
+                        if (nr >= minR && nr <= maxR && nc >= 3 && nc <= 5 && canLand(nr, nc)) {
+                            moves.push({ r: nr, c: nc });
+                        }
+                    });
+                    break;
+                }
+                case 'B': {
+                    const minR = isRed ? 5 : 0, maxR = isRed ? 9 : 4;
+                    const ELEPHANT_MOVES = [
+                        { target: [2, 2], eye: [1, 1] }, { target: [2, -2], eye: [1, -1] },
+                        { target: [-2, 2], eye: [-1, 1] }, { target: [-2, -2], eye: [-1, -1] }
+                    ];
+                    ELEPHANT_MOVES.forEach(({ target: [tr, tc], eye: [er, ec] }) => {
+                        const eyeR = r + er, eyeC = c + ec;
+                        const targetR = r + tr, targetC = c + tc;
+                        if (targetR >= minR && targetR <= maxR && targetC >= 0 && targetC <= 8) {
+                            if (!board[eyeR][eyeC] && canLand(targetR, targetC)) {
+                                moves.push({ r: targetR, c: targetC });
+                            }
+                        }
+                    });
+                    break;
+                }
+                case 'N': {
+                    HORSE_MOVES.forEach(({ target: [tr, tc], leg: [lr, lc] }) => {
+                        const legR = r + lr, legC = c + lc;
+                        if (legR >= 0 && legR < 10 && legC >= 0 && legC < 9 && !board[legR][legC]) {
+                            if (canLand(r + tr, c + tc)) moves.push({ r: r + tr, c: c + tc });
+                        }
+                    });
+                    break;
+                }
+                case 'R':
+                case 'C': {
+                    ORTHO_DIRS.forEach(([dr, dc]) => {
+                        let nr = r + dr, nc = c + dc, screenFound = false;
+                        while (nr >= 0 && nr < 10 && nc >= 0 && nc < 9) {
+                            if (!board[nr][nc]) {
+                                if (!screenFound) moves.push({ r: nr, c: nc });
+                            } else {
+                                if (type === 'R') {
+                                    if (isEnemy(board[nr][nc])) moves.push({ r: nr, c: nc });
+                                    break;
+                                } else {
+                                    if (!screenFound) { screenFound = true; }
+                                    else {
+                                        if (isEnemy(board[nr][nc])) moves.push({ r: nr, c: nc });
+                                        break;
+                                    }
+                                }
+                            }
+                            nr += dr; nc += dc;
+                        }
+                    });
+                    break;
+                }
+                case 'P': {
+                    const step = isRed ? -1 : 1;
+                    if (canLand(r + step, c)) moves.push({ r: r + step, c });
+                    const crossed = isRed ? r <= 4 : r >= 5;
+                    if (crossed) {
+                        if (canLand(r, c - 1)) moves.push({ r, c: c - 1 });
+                        if (canLand(r, c + 1)) moves.push({ r, c: c + 1 });
+                    }
+                    break;
+                }
+            }
+            return moves;
+        }
+
+        function startPracticeGame() {
+            currentBoardState = [
+                ['r', 'n', 'b', 'a', 'k', 'a', 'b', 'n', 'r'],
+                [null, null, null, null, null, null, null, null, null],
+                [null, 'c', null, null, null, null, null, 'c', null],
+                ['p', null, 'p', null, 'p', null, 'p', null, 'p'],
+                [null, null, null, null, null, null, null, null, null],
+                [null, null, null, null, null, null, null, null, null],
+                ['P', null, 'P', null, 'P', null, 'P', null, 'P'],
+                [null, 'C', null, null, null, null, null, 'C', null],
+                [null, null, null, null, null, null, null, null, null],
+                ['R', 'N', 'B', 'A', 'K', 'A', 'B', 'N', 'R']
+            ];
+            currentTurn = 'red'; selectedCell = null; validMoves = [];
+            renderBoard('practice-board', currentBoardState);
+            document.getElementById('practice-turn').innerText = '🔴 紅方回合（輪到你）';
+        }
+
+        function resetPracticeGame() {
+            startPracticeGame();
+            showToast("⚔️ 實戰對局已重置");
+        }
+
+        // Piece Values for AI Board Evaluation
+        const PIECE_VALUES = {
+            'k': 10000, 'r': 90, 'c': 45, 'n': 40, 'a': 20, 'b': 20, 'p': 10,
+            'K': 10000, 'R': 90, 'C': 45, 'N': 40, 'A': 20, 'B': 20, 'P': 10
+        };
+
+        function evaluateBoard(board) {
+            let score = 0;
+            for (let r = 0; r < 10; r++) {
+                for (let c = 0; c < 9; c++) {
+                    const p = board[r][c];
+                    if (!p) continue;
+                    let val = PIECE_VALUES[p] || 0;
+                    
+                    // Position Bonus: Passed Pawn & Center Control
+                    if (p === 'p' && r >= 5) val += 15;
+                    if (p === 'P' && r <= 4) val += 15;
+                    if ((p === 'r' || p === 'c' || p === 'R' || p === 'C') && c >= 3 && c <= 5) val += 5;
+
+                    if (p === p.toLowerCase()) {
+                        score += val; // Black (AI)
+                    } else {
+                        score -= val; // Red (Player)
+                    }
+                }
+            }
+            return score;
+        }
+
+        function makeAIMove() {
+            const diff = parseInt(document.getElementById('ai-difficulty')?.value || '3', 10);
+            const allMoves = [];
+
+            for (let r = 0; r < 10; r++) {
+                for (let c = 0; c < 9; c++) {
+                    const piece = currentBoardState[r][c];
+                    if (piece && piece === piece.toLowerCase()) {
+                        const moves = getValidMovesForPiece(r, c, currentBoardState);
+                        moves.forEach(m => {
+                            allMoves.push({
+                                fromR: r, fromC: c, toR: m.r, toC: m.c,
+                                captured: currentBoardState[m.r][m.c]
+                            });
+                        });
+                    }
+                }
+            }
+
+            if (allMoves.length === 0) {
+                showToast("🎉 紅方獲勝！AI 已無子可走！");
+                document.getElementById('practice-turn').innerText = '🏆 恭喜大獲全勝！';
+                return;
+            }
+
+            let chosenMove = null;
+
+            if (diff === 1) {
+                // Level 1: Pure Random
+                chosenMove = allMoves[Math.floor(Math.random() * allMoves.length)];
+            } else if (diff === 2) {
+                // Level 2: Greedy Capture Priority
+                const captures = allMoves.filter(m => m.captured).sort((a, b) => (PIECE_VALUES[b.captured] || 0) - (PIECE_VALUES[a.captured] || 0));
+                chosenMove = captures.length > 0 ? captures[0] : allMoves[Math.floor(Math.random() * allMoves.length)];
+            } else if (diff === 3) {
+                // Level 3: 1-Ply Board Evaluation
+                let bestScore = -Infinity;
+                let candidates = [];
+                for (const m of allMoves) {
+                    const tempPiece = currentBoardState[m.toR][m.toC];
+                    currentBoardState[m.toR][m.toC] = currentBoardState[m.fromR][m.fromC];
+                    currentBoardState[m.fromR][m.fromC] = null;
+
+                    const score = evaluateBoard(currentBoardState);
+
+                    currentBoardState[m.fromR][m.fromC] = currentBoardState[m.toR][m.toC];
+                    currentBoardState[m.toR][m.toC] = tempPiece;
+
+                    if (score > bestScore) {
+                        bestScore = score;
+                        candidates = [m];
+                    } else if (score === bestScore) {
+                        candidates.push(m);
+                    }
+                }
+                chosenMove = candidates[Math.floor(Math.random() * candidates.length)];
+            } else {
+                // Level 4 & 5: Minimax 2-Ply Counter-Reply Analysis
+                let bestScore = -Infinity;
+                let candidates = [];
+
+                for (const m of allMoves) {
+                    const tempPiece = currentBoardState[m.toR][m.toC];
+                    currentBoardState[m.toR][m.toC] = currentBoardState[m.fromR][m.fromC];
+                    currentBoardState[m.fromR][m.fromC] = null;
+
+                    let minPlayerReplyScore = Infinity;
+                    let redMoves = [];
+                    for (let pr = 0; pr < 10; pr++) {
+                        for (let pc = 0; pc < 9; pc++) {
+                            const pPiece = currentBoardState[pr][pc];
+                            if (pPiece && pPiece === pPiece.toUpperCase()) {
+                                const pMoves = getValidMovesForPiece(pr, pc, currentBoardState);
+                                pMoves.forEach(pm => redMoves.push({ fromR: pr, fromC: pc, toR: pm.r, toC: pm.c }));
+                            }
+                        }
+                    }
+
+                    if (redMoves.length === 0) {
+                        minPlayerReplyScore = 10000;
+                    } else {
+                        for (const rm of redMoves) {
+                            const rTemp = currentBoardState[rm.toR][rm.toC];
+                            currentBoardState[rm.toR][rm.toC] = currentBoardState[rm.fromR][rm.fromC];
+                            currentBoardState[rm.fromR][rm.fromC] = null;
+
+                            const replyScore = evaluateBoard(currentBoardState);
+
+                            currentBoardState[rm.fromR][rm.fromC] = currentBoardState[rm.toR][rm.toC];
+                            currentBoardState[rm.toR][rm.toC] = rTemp;
+
+                            if (replyScore < minPlayerReplyScore) {
+                                minPlayerReplyScore = replyScore;
+                            }
+                        }
+                    }
+
+                    currentBoardState[m.fromR][m.fromC] = currentBoardState[m.toR][m.toC];
+                    currentBoardState[m.toR][m.toC] = tempPiece;
+
+                    if (minPlayerReplyScore > bestScore) {
+                        bestScore = minPlayerReplyScore;
+                        candidates = [m];
+                    } else if (minPlayerReplyScore === bestScore) {
+                        candidates.push(m);
+                    }
+                }
+                chosenMove = candidates[Math.floor(Math.random() * candidates.length)];
+            }
+
+            if (chosenMove) {
+                currentBoardState[chosenMove.toR][chosenMove.toC] = currentBoardState[chosenMove.fromR][chosenMove.fromC];
+                currentBoardState[chosenMove.fromR][chosenMove.fromC] = null;
+                currentTurn = 'red';
+                renderBoard('practice-board', currentBoardState);
+                document.getElementById('practice-turn').innerText = '🔴 紅方回合（輪到你）';
+            }
+        }
+
+        function renderTacticsShowcase() {
+            const container = document.getElementById('tactics-cards-showcase');
+            if (!container) return;
+            container.innerHTML = '';
+
+            TACTICS_CODEX.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-stone-900 p-4 rounded-xl border border-amber-900/40 shadow-lg flex flex-col justify-between";
+                
+                let flowHtml = item.flow.map(f => `
+                    <div class="flex-1 bg-stone-950 p-2 rounded text-center">
+                        <span class="text-sm">${f.icon}</span>
+                        <div class="text-[9px] font-bold text-amber-300 mt-0.5">${f.title}</div>
+                        <div class="text-[8px] text-stone-400">${f.text}</div>
+                    </div>
+                `).join('<div class="text-amber-500 font-bold self-center text-xs">➔</div>');
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-amber-300 text-sm flex items-center gap-1">
+                                <span>${item.icon}</span> ${item.title}
+                            </h3>
+                            <span class="text-[9px] bg-amber-950 text-amber-400 px-1.5 py-0.5 rounded border border-amber-800/40 font-bold">${item.difficulty}</span>
+                        </div>
+                        <p class="text-xs text-stone-300 leading-relaxed mb-3">${item.desc}</p>
+                        <div class="flex items-center gap-1 mb-3">${flowHtml}</div>
+                    </div>
+                    <div class="pt-2 border-t border-stone-800 text-[10px] text-amber-400 italic">
+                        💡 ${item.keyPoint}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function addPlayerExp(amount) {
+            playerState.exp += amount;
+            if (playerState.exp >= playerState.maxExp) {
+                playerState.exp -= playerState.maxExp;
+                playerState.level += 1;
+                playerState.maxExp = Math.floor(playerState.maxExp * 1.5);
+                showToast(`🎉 恭喜升級！到達 Lv.${playerState.level}`);
+            }
+            updatePlayerStatsUI();
+        }
+
+        function updatePlayerStatsUI() {
+            document.getElementById('user-level').innerText = `Lv.${playerState.level} 象棋少俠`;
+            document.getElementById('user-coins').innerText = playerState.coins;
+            document.getElementById('exp-text').innerText = `${playerState.exp}/${playerState.maxExp}`;
+            const percentage = Math.min(100, Math.floor((playerState.exp / playerState.maxExp) * 100));
+            document.getElementById('exp-bar-inner').style.width = `${percentage}%`;
+        }
+
+        function copyPrompt(text) {
+            const temp = document.createElement('textarea');
+            temp.value = text; document.body.appendChild(temp);
+            temp.select(); document.execCommand('copy');
+            document.body.removeChild(temp);
+            showToast("📋 已複製 Suno AI Style 提示詞至剪貼簿！");
+        }
+
+        // Web Audio Pentatonic Ambient Sound Synthesizer
+        function playAmbientSound() {
+            try {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                const ctx = new AudioCtx();
+                
+                // Classical Pentatonic frequencies (Guzheng scale)
+                const freqs = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
+                
+                freqs.forEach((freq, idx) => {
+                    setTimeout(() => {
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        
+                        osc.type = 'triangle';
+                        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+                        
+                        gain.gain.setValueAtTime(0, ctx.currentTime);
+                        gain.gain.linearRampToValueAtTime(0.15, ctx.currentTime + 0.1);
+                        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.8);
+                        
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        
+                        osc.start();
+                        osc.stop(ctx.currentTime + 1.8);
+                    }, idx * 300);
+                });
+                showToast("🎶 Web Audio 原生古箏古典音律奏響中...");
+            } catch (e) {
+                showToast("🔊 您的流覽器阻擋了自動音訊播放");
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            document.getElementById('toast-message').innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => toast.classList.add('translate-y-20', 'opacity-0'), 2500);
+        }
+    </script>
+</body>
+</html>
